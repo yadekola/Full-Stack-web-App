@@ -15,11 +15,11 @@ function Post() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3301/posts/byId/${id}`).then((response) => {
+    axios.get(`https://full-stack-api-yade-a58a699bb725.herokuapp.com/posts/byId/${id}`).then((response) => {
       setPostObject(response.data);
     });
 
-    axios.get(`http://localhost:3301/comments/${id}`).then((response) => {
+    axios.get(`https://full-stack-api-yade-a58a699bb725.herokuapp.com/comments/${id}`).then((response) => {
       setComments(response.data);
       // console.log(response.data);
     });
@@ -27,7 +27,7 @@ function Post() {
 
   const addComment = () => {
     axios
-      .post("http://localhost:3301/comments", {
+      .post("https://full-stack-api-yade-a58a699bb725.herokuapp.com/comments", {
         commentBody: newComment,
         PostId: id,
       },
@@ -53,7 +53,7 @@ function Post() {
 
   const deleteComment = (id) => {
     axios
-      .delete(`http://localhost:3301/comments/${id}`, {
+      .delete(`https://full-stack-api-yade-a58a699bb725.herokuapp.com/comments/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -67,7 +67,7 @@ function Post() {
 
   const deletePost = (id) => {
     axios
-      .delete(`http://localhost:3301/posts/${id}`, {
+      .delete(`https://full-stack-api-yade-a58a699bb725.herokuapp.com/posts/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -79,7 +79,7 @@ function Post() {
     if (option === "title") {
       let newTitle = prompt("Enter New Title:");
       axios.put(
-        "http://localhost:3301/posts/title",
+        "https://full-stack-api-yade-a58a699bb725.herokuapp.com/posts/title",
         {
           newTitle: newTitle,
           id: id,
@@ -93,7 +93,7 @@ function Post() {
     } else {
       let newPostText = prompt("Enter New Text:");
       axios.put(
-        "http://localhost:3301/posts/postText",
+        "https://full-stack-api-yade-a58a699bb725.herokuapp.com/posts/postText",
         {
           newText: newPostText,
           id: id,

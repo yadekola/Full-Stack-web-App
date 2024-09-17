@@ -19,7 +19,7 @@ function Registration() {
   });
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:3301/auth", data).then(() => {
+    axios.post("https://full-stack-api-yade-a58a699bb725.herokuapp.com/auth", data).then(() => {
       console.log(data);
     });
     navigate("/");

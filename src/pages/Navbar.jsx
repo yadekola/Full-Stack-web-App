@@ -15,7 +15,7 @@ function Navbar() {
   
   useEffect(() => {
     axios
-      .get("http://localhost:3301/auth/auth", {
+      .get("https://full-stack-api-yade-a58a699bb725.herokuapp.com/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },

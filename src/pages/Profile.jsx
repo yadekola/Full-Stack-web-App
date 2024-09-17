@@ -11,11 +11,11 @@ function Profile() {
   const { authState } = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get(`http://localhost:3301/auth/basicinfo/${id}`).then((response) => {
+    axios.get(`https://full-stack-api-yade-a58a699bb725.herokuapp.com/auth/basicinfo/${id}`).then((response) => {
       setUsername(response.data.username);
     });
 
-    axios.get(`http://localhost:3301/posts/byuserId/${id}`).then((response) => {
+    axios.get(`https://full-stack-api-yade-a58a699bb725.herokuapp.com/posts/byuserId/${id}`).then((response) => {
       setListOfPosts(response.data);
     });
   }, []);

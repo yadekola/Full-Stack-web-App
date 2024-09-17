@@ -30,7 +30,7 @@ function CreatePost() {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3301/posts", data, {
+      .post("https://full-stack-api-yade-a58a699bb725.herokuapp.com/posts", data, {
       headers: { accessToken: localStorage.getItem("accessToken") },
     })
     .then((response) => {

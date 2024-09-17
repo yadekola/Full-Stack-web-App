@@ -19,7 +19,7 @@ function Home() {
       return;
     } else {
       axios
-        .get("http://localhost:3301/posts", { 
+        .get("https://full-stack-api-yade-a58a699bb725.herokuapp.com/posts", { 
         headers: { accessToken: localStorage.getItem("accessToken") }, 
       })
       .then((response) => {
@@ -35,7 +35,7 @@ function Home() {
 
   const likeAPost = (postId) => {
     axios.post(
-      "http://localhost:3301/likes",
+      "https://full-stack-api-yade-a58a699bb725.herokuapp.com/likes",
       { PostId: postId },
       { headers: { accessToken: localStorage.getItem("accessToken") } }
     ).then((response) => {
